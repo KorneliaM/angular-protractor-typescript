@@ -1,5 +1,3 @@
-/// <reference path="../../../typings/jasmine/jasmine.d.ts" />
-
 describe("hello-protractor", function () {
     
     describe("index", function() {
@@ -11,10 +9,17 @@ describe("hello-protractor", function () {
         it("should turn the button background color blue", function () {
             browser.get('/#');
             
-            var clickMe = element(by.id('clickMe')); 
-            expect(clickMe.getCssValue('background-color')).toEqual("blue");
-            clickMe.click();
-            expect(clickMe.getCssValue('background-color')).toEqual("blue");
+            element(by.id('button-to-click')).click();
+            
+            expect(element(by.id('click-button-element')).getCssValue('background-color')).toEqual("rgba(0, 0, 255, 1)");
+        });
+        
+        it("should display the new text", function () {
+            browser.get('/#');
+            
+            element(by.id('change-text-button')).click();
+            
+            expect(element(by.binding('currentText')).getText()).toEqual("Der er trykket på knappen");
         });
     });
     

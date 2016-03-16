@@ -5,9 +5,9 @@ app.directive('clickButton', () => {
     return {
         restrict: 'E',
         link: (scope, elem, attrs) => {
-            elem.on('click', () => elem.css('background-color', 'blue'));
+            elem.on('click', (event) => angular.element(event.target).css('background-color', 'blue'));
         },
-        template: '<button id="button-to-click">Tryk på denne knap for der sker noget sjovt</button>'
+        template: '<button id="change-color-button">Tryk på denne knap for der sker noget sjovt</button>'
     };
 });
 

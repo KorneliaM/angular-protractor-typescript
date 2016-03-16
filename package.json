@@ -4,10 +4,16 @@
   "description": "A tet",
   "main": "index.js",
   "scripts": {
-    "test": "protractor test/protractor.conf.js",
+    "test": "protractor test-dist/protractor.conf.js",
     "server": "lite-server",
-    "test-manager": "webdriver-manager start"
+    "webdriver": "webdriver-manager start"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.0",
+    "lite-server": "^2.1.0",
+    "typescript": "^1.8.7",
+    "typings": "^0.7.9"
+  }
 }
